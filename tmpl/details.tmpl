@@ -16,12 +16,15 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
 
 <dl class="details">
 
-    <?js if (data.meta && self.outputSourceFiles) {?>
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <?js= self.linkto(meta.shortpath) ?>, <?js= self.linkto(meta.shortpath, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?>
+        <?js if (data.meta && self.outputSourceFiles) {?>
+          <?js= self.linkto(meta.shortpath) ?>, <?js= self.linkto(meta.shortpath, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?>
+        <?js } ?>
+        <?js if (data.meta && self.outputSourceFiles !== true) {?>
+          <?js= meta.shortpath ?>, <?js= meta.shortpath, 'line ' + meta.lineno, null, 'line' + meta.lineno ?>
+        <?js } ?>
     </li></ul></dd>
-    <?js } ?>
 
     <?js if (data.version) {?>
     <dt class="tag-version">Version:</dt>
