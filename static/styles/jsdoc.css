@@ -93,11 +93,11 @@ h4.name {
 }
 
 h4.name a {
-  color: #fc83ff;
+  color: #008de4;
 }
 
 h4.name a:hover {
-  border-bottom-color: #fc83ff;
+  border-bottom-color: #008de4;
 }
 
 h5, .container-overview .subsection-title {
